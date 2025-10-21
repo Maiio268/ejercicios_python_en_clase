@@ -1,4 +1,15 @@
-from encontrar_vocal import procesar_vocales
+from encontrar_vocal import saca_vocales
+import pytest
 
-def test_procesar_vocales():
-    assert procesar_vocales("Hola me llamo Mario") == "oaeaoaio"
+@pytest.mark.parametrize(
+    "cadena, esperado",
+    [
+        ("Hola me llamo mario", "oaeaoaio"),
+        ("Hey", "e"),
+        ("Bjhgtkv", ""),
+        ("aeiouAEIOU", "aeiouAEIOU"),
+        ("1", "")
+    ]
+)
+def test_saca_vocales(cadena, esperado):
+    assert saca_vocales(cadena) == esperado
