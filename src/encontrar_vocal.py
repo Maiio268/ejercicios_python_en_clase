@@ -1,8 +1,8 @@
 # Se introduce una cadena y devuelve una cadena SOLO con las vocales de la cadena introducida.
-def saca_vocales(frase:str):
+def saca_vocales(frase:str) -> str:
     frase_nueva = ""
-    for letra in frase:
-        if letra in "aeiouAEIOU":
+    for letra in frase.lower():
+        if letra in "aeiou":
             frase_nueva += letra
     return frase_nueva
 
