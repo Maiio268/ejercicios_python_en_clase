@@ -20,7 +20,7 @@ def transforma_hora(hora):
     horas = int(partes_hora[0])
     minutos = int(partes_hora[1])
 
-    minutos_totales = (24-horas)*60 + minutos
+    minutos_totales = (24-horas)*60 + (60-minutos)
     return minutos_totales
     
 def mostrar_resultado(minutos_totales):
